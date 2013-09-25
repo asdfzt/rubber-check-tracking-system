@@ -9,7 +9,6 @@
     <p>
         Our team is dedicated to your success in bounced check retrieval.</p>
     <p>
-        You can also find <a href="http://go.microsoft.com/fwlink/?LinkID=152368&amp;clcid=0x409"
-            title="MSDN ASP.NET Docs">documentation on ASP.NET at MSDN</a>.
+       
     </p>
 </asp:Content>

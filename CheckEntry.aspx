@@ -26,6 +26,7 @@
                     <Items>
                         <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Home"/>
                         <asp:MenuItem NavigateUrl="~/CheckEntry.aspx" Text="Check Entry"/>
+                        <asp:MenuItem NavigateUrl="~/databaseForm.aspx" Text="Manage Checks"/>
                         <asp:MenuItem NavigateUrl="~/About.aspx" Text="About"/>
                     </Items>
                 </asp:Menu>
@@ -33,22 +34,22 @@
         </div>
 
         <div class="body">
-        <div>
+        <div id=" ">
     
             <br />
-            <br />Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Drivers License:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Check No:&nbsp; </div>
+            <br />&nbsp;Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Drivers License:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Check No:&nbsp; </div>
     <asp:TextBox ID="TextBoxName" runat="server"></asp:TextBox>
     <asp:TextBox ID="TextBoxDL" runat="server"></asp:TextBox>
     <asp:TextBox ID="TextBoxCheckNo" runat="server"></asp:TextBox>
     <br />
-    Routing No:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-    Telephone No:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Account No:<br />
+    &nbsp;Routing No:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Telephone No:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Account No:<br />
     <asp:TextBox ID="TextBoxRouteNo" runat="server"></asp:TextBox>
     <asp:TextBox ID="TextBoxTelNo" runat="server"></asp:TextBox>
-    <asp:TextBox ID="TextBoxAccNo" runat="server"></asp:TextBox>
+            <asp:TextBox ID="TextBoxAccNo" runat="server"></asp:TextBox>
     <br />
-            Address:<br />
-        <asp:TextBox ID="TextBoxAddress" runat="server" Height="61px" Width="220px"></asp:TextBox>
+            &nbsp;Address:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Date:<br />
+            &nbsp;<asp:TextBox ID="TextBoxAddress" runat="server" Width="256px"></asp:TextBox>
+            <asp:TextBox ID="TextBoxDate" runat="server"></asp:TextBox>
         <br />
         <br />
         <asp:Button ID="ButtonAddEntry" runat="server"

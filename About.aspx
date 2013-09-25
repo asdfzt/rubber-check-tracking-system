@@ -8,7 +8,6 @@
         About
     </h2>
     <p>
-        <asp:Button ID="Button1" runat="server" Text="Button" />
-        Put content here.
+        RCTS is designed to meet your needs when it comes to check tracking.
     </p>
 </asp:Content>

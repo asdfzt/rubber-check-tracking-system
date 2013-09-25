@@ -16,7 +16,7 @@ public partial class CheckEntry : System.Web.UI.Page
     protected void ButtonAddEntry_Click(object sender, EventArgs e)
     {
         dc.AddRecord("Information", TextBoxDL.Text, TextBoxName.Text, TextBoxCheckNo.Text,
-            TextBoxRouteNo.Text, TextBoxAddress.Text, TextBoxTelNo.Text, TextBoxAccNo.Text);
+            TextBoxRouteNo.Text, TextBoxAddress.Text, TextBoxTelNo.Text, TextBoxAccNo.Text, TextBoxDate.Text);
     }
 
     
