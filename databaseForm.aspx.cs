@@ -16,12 +16,10 @@ public partial class databaseForm : System.Web.UI.Page
     }
     protected void ListView1_SelectedIndexChanged(object sender, EventArgs e)
     {
-        
     }
 
     protected void DetailsViewEditDB_PageIndexChanging(object sender, DetailsViewPageEventArgs e)
     {
-        string s = "asdf";
     }
     protected void buttonModifyClick(object sender, EventArgs e)
     { 

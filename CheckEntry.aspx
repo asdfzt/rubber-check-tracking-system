@@ -35,26 +35,39 @@
 
         <div class="body">
         <div id=" ">
-    
+    <asp:ValidationSummary ID="LoginUserValidationSummary" runat="server" CssClass="failureNotification" 
+                 ValidationGroup="LoginUserValidationGroup"/>
             <br />
             <br />&nbsp;Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Drivers License:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Check No:&nbsp; </div>
     <asp:TextBox ID="TextBoxName" runat="server"></asp:TextBox>
+    <asp:RequiredFieldValidator ID="NameRequired" runat="server" ControlToValidate="TextBoxName" 
+                             CssClass="failureNotification" ErrorMessage="Customer Name is required." ToolTip="Customer Name is required." 
+                             ValidationGroup="LoginUserValidationGroup">*</asp:RequiredFieldValidator>
     <asp:TextBox ID="TextBoxDL" runat="server"></asp:TextBox>
     <asp:TextBox ID="TextBoxCheckNo" runat="server"></asp:TextBox>
     <br />
     &nbsp;Routing No:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Telephone No:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Account No:<br />
     <asp:TextBox ID="TextBoxRouteNo" runat="server"></asp:TextBox>
+     <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBoxRouteNo" 
+                             CssClass="failureNotification" ErrorMessage="Routing Number is required." ToolTip="Routing Number is required." 
+                             ValidationGroup="LoginUserValidationGroup">*</asp:RequiredFieldValidator>
     <asp:TextBox ID="TextBoxTelNo" runat="server"></asp:TextBox>
             <asp:TextBox ID="TextBoxAccNo" runat="server"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBoxAccNo" 
+                             CssClass="failureNotification" ErrorMessage="Account Number is required." ToolTip="Account Number is required." 
+                             ValidationGroup="LoginUserValidationGroup">*</asp:RequiredFieldValidator>
     <br />
             &nbsp;Address:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Date:<br />
-            &nbsp;<asp:TextBox ID="TextBoxAddress" runat="server" Width="256px"></asp:TextBox>
+            <asp:TextBox ID="TextBoxAddress" runat="server" Width="256px"></asp:TextBox>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="TextBoxAddress" 
+                             CssClass="failureNotification" ErrorMessage="Full Address is required." ToolTip="Full Address is required." 
+                             ValidationGroup="LoginUserValidationGroup">*</asp:RequiredFieldValidator>
             <asp:TextBox ID="TextBoxDate" runat="server"></asp:TextBox>
         <br />
         <br />
         <asp:Button ID="ButtonAddEntry" runat="server"
-            Text="Add Entry" onclick="ButtonAddEntry_Click" />
-        <asp:Button ID="ButtonClear" runat="server" Text="Clear" />
+            Text="Add Entry" onclick="ButtonAddEntry_Click" ValidationGroup="LoginUserValidationGroup"/>
+        <asp:Button ID="ButtonClear" runat="server" Text="Clear" OnClick="ButtonClear_Click" />
         </div>
          
     </div>

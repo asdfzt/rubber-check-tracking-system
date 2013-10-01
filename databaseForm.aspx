@@ -14,8 +14,7 @@
     <div class="header">
             <div class="title">
             <h1>
-            Rubber Check Tracking System - Check Entry
-            </h1>
+            Rubber Check Tracking System - Manage Checks</h1>
             </div>
             <div class="clear hideSkiplink">
                 <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" 
