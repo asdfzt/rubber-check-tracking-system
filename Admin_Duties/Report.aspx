@@ -1,6 +1,8 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Home_Authenticated.aspx.cs" Inherits="Home_Authenticated" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="Report.aspx.cs" Inherits="Admin_Duties_Report" %>
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<%@ Register assembly="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" namespace="Microsoft.Reporting.WebForms" tagprefix="rsweb" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -41,8 +43,22 @@
         </div>
 
         <div class="body">
-    <h2>
-        Thank you for logging into the RCTS!</h2>
+            <rsweb:ReportViewer ID="ReportViewer1" runat="server" Font-Names="Verdana" 
+                Font-Size="8pt" InteractiveDeviceInfos="(Collection)" 
+                WaitMessageFont-Names="Verdana" WaitMessageFont-Size="14pt" Width="800px">
+                <localreport reportpath="Report7.rdlc">
+                    <datasources>
+                        <rsweb:ReportDataSource DataSourceId="ObjectDataSource1" Name="DataSet1" />
+                    </datasources>
+                </localreport>
+            </rsweb:ReportViewer>
+            <br />
+            <asp:ObjectDataSource ID="ObjectDataSource1" runat="server" 
+                SelectMethod="GetData" 
+                TypeName="RCTSDataSetTableAdapters.InformationTableAdapter">
+            </asp:ObjectDataSource>
+            <asp:ScriptManager ID="ScriptManager1" runat="server">
+            </asp:ScriptManager>
         </div>
          
     </div>

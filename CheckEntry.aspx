@@ -27,7 +27,7 @@
                         <asp:MenuItem NavigateUrl="~/Home_Authenticated.aspx" Text="Home"/>
                         <asp:MenuItem NavigateUrl="~/CheckEntry.aspx" Text="Check Entry"/>
                         <asp:MenuItem NavigateUrl="~/databaseForm.aspx" Text="Manage Checks"/>
-                        <asp:MenuItem NavigateUrl="~/AdminDuties.aspx" Text="Admin Duties"/>
+                        <asp:MenuItem NavigateUrl="~/Admin_Duties/AdminDuties.aspx" Text="Admin Duties"/>
                         <%--<asp:MenuItem NavigateUrl="~/About.aspx" Text="About"/> --%>
                     </Items>
                 </asp:Menu>

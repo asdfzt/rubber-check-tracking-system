@@ -24,7 +24,7 @@
                         <asp:MenuItem NavigateUrl="~/Home_Authenticated.aspx" Text="Home"/>
                         <asp:MenuItem NavigateUrl="~/CheckEntry.aspx" Text="Check Entry"/>
                         <asp:MenuItem NavigateUrl="~/databaseForm.aspx" Text="Manage Checks"/>
-                        <asp:MenuItem NavigateUrl="~/AdminDuties.aspx" Text="Admin Duties"/>
+                        <asp:MenuItem NavigateUrl="~/Admin_Duties/AdminDuties.aspx" Text="Admin Duties"/>
                         <%--<asp:MenuItem NavigateUrl="~/About.aspx" Text="About"/> --%>
                     </Items>
                 </asp:Menu>
@@ -278,7 +278,7 @@
             </SelectedItemTemplate>
         </asp:ListView>
         <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
-            ConnectionString="<%$ ConnectionStrings:RCTSConnectionString %>"
+            ConnectionString="<%$ ConnectionStrings:RCTSConnectionString2 %>"
             DeleteCommand="DELETE [Information] WHERE [Routing_No] = @Routing_No AND [Account_No] = @Account_No" 
             SelectCommand="SELECT * FROM [Information]"
             UpdateCommand="UPDATE Information 

@@ -8,7 +8,7 @@
         Log In
     </h2>
     <p>
-        Please enter your username and password. Register if you don't have an account.
+        Please enter your username and password.
         <%--<asp:HyperLink ID="RegisterHyperLink" runat="server" EnableViewState="false">Register</asp:HyperLink> --%>
     </p>
     <asp:Login ID="LoginUser" runat="server" EnableViewState="false" RenderOuterTable="false">
