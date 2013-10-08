@@ -25,9 +25,8 @@
                     MenuItemClick="NavigationMenu_MenuItemClick">
                     <Items>
                         <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Home"/>
-                        <asp:MenuItem NavigateUrl="~/CheckEntry.aspx" Text="Check Entry"/>
-                        <asp:MenuItem NavigateUrl="~/databaseForm.aspx" Text="Manage Checks"/>
-                        <asp:MenuItem NavigateUrl="~/About.aspx" Text="About"/>
+                        <asp:MenuItem NavigateUrl="~/Account/Login.aspx" Text="Login"/>
+                        <%--<asp:MenuItem NavigateUrl="~/About.aspx" Text="About"/> --%>
                     </Items>
                 </asp:Menu>
             </div>

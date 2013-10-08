@@ -21,10 +21,11 @@
                     EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal" 
                     MenuItemClick="NavigationMenu_MenuItemClick">
                     <Items>
-                        <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Home"/>
+                        <asp:MenuItem NavigateUrl="~/Home_Authenticated.aspx" Text="Home"/>
                         <asp:MenuItem NavigateUrl="~/CheckEntry.aspx" Text="Check Entry"/>
                         <asp:MenuItem NavigateUrl="~/databaseForm.aspx" Text="Manage Checks"/>
-                        <asp:MenuItem NavigateUrl="~/About.aspx" Text="About"/>
+                        <asp:MenuItem NavigateUrl="~/AdminDuties.aspx" Text="Admin Duties"/>
+                        <%--<asp:MenuItem NavigateUrl="~/About.aspx" Text="About"/> --%>
                     </Items>
                 </asp:Menu>
          </div>
