@@ -1,0 +1,5 @@
+C:\Users\Zack\Documents\work\7th Semester\Software Dev\RCTS-Prod\RCTS-Prod\bin\RCTS-Prod.dll
+C:\Users\Zack\Documents\work\7th Semester\Software Dev\RCTS-Prod\RCTS-Prod\bin\RCTS-Prod.pdb
+C:\Users\Zack\Documents\work\7th Semester\Software Dev\RCTS-Prod\RCTS-Prod\obj\Debug\RCTS-Prod.csprojResolveAssemblyReference.cache
+C:\Users\Zack\Documents\work\7th Semester\Software Dev\RCTS-Prod\RCTS-Prod\obj\Debug\RCTS-Prod.dll
+C:\Users\Zack\Documents\work\7th Semester\Software Dev\RCTS-Prod\RCTS-Prod\obj\Debug\RCTS-Prod.pdb
