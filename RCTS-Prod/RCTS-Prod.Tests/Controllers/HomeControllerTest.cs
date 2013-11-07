@@ -22,8 +22,7 @@ namespace RCTS_Prod.Tests.Controllers
             ViewResult result = controller.Index() as ViewResult;
 
             // Assert
-            ViewDataDictionary viewData = result.ViewData;
-            Assert.AreEqual("Welcome to ASP.NET MVC!", viewData["Message"]);
+            Assert.AreEqual("This is the Default page", result.ViewBag.Message);
         }
 
         [TestMethod]
@@ -36,7 +35,20 @@ namespace RCTS_Prod.Tests.Controllers
             ViewResult result = controller.About() as ViewResult;
 
             // Assert
-            Assert.IsNotNull(result);
+            Assert.AreEqual("This is the About page", result.ViewBag.Message);
+        }
+
+        [TestMethod]
+        public void Contact()
+        {
+            // Arrange
+            HomeController controller = new HomeController();
+
+            // Act
+            ViewResult result = controller.Contact() as ViewResult;
+
+            // Assert
+            Assert.AreEqual("This is the Contact page", result.ViewBag.Message);
         }
     }
 }
