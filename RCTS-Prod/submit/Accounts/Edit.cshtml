@@ -1,0 +1,37 @@
+﻿@model RCTS_Prod.Models.Account
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Account</legend>
+
+        @Html.HiddenFor(model => model.Account_No)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Routing_No, "Bank")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("Routing_No", String.Empty)
+            @Html.ValidationMessageFor(model => model.Routing_No)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

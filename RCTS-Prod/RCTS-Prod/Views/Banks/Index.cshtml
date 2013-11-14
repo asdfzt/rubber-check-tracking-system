@@ -1,0 +1,63 @@
+﻿@model IEnumerable<RCTS_Prod.Models.Bank>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Routing_No)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Bank_Phone_No)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Bank_Street)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Bank_City)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Bank_State)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Bank_Zip)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Routing_No)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Bank_Phone_No)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Bank_Street)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Bank_City)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Bank_State)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Bank_Zip)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Routing_No }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Routing_No }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Routing_No })
+        </td>
+    </tr>
+}
+
+</table>

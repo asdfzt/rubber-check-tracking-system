@@ -49,3 +49,6 @@ C:\Users\Zack\Documents\work\7th Semester\Software Dev\RCTS-Prod\RCTS-Prod\obj\D
 C:\Users\Zack\Documents\work\7th Semester\Software Dev\RCTS-Prod\RCTS-Prod\obj\Debug\RCTS-Prod.pdb
 C:\Users\Zack\Documents\work\7th Semester\Software Dev\RCTS-Prod\RCTS-Prod\obj\Debug\RCTS_Prod.Migrations.InitialCreate.resources
 C:\Users\Zack\Documents\work\7th Semester\Software Dev\RCTS-Prod\RCTS-Prod\obj\Debug\RCTS-Prod.csproj.GenerateResource.Cache
+C:\Users\Zack\Documents\work\7th Semester\Software Dev\RCTS-Prod\RCTS-Prod\obj\Debug\RCTS_Prod.Migrations.mig2.resources
+C:\Users\Zack\Documents\work\7th Semester\Software Dev\RCTS-Prod\RCTS-Prod\obj\Debug\RCTS_Prod.Migrations.mig3.resources
+C:\Users\Zack\Documents\work\7th Semester\Software Dev\RCTS-Prod\RCTS-Prod\obj\Debug\RCTS_Prod.Migrations.mig31.resources

@@ -162,31 +162,46 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AccountsController.cs" />
     <Compile Include="Controllers\Admin_DutiesController.cs" />
-    <Compile Include="Controllers\Check_EntryController.cs" />
+    <Compile Include="Controllers\BanksController.cs" />
+    <Compile Include="Controllers\ChecksController.cs" />
     <Compile Include="Controllers\Check_PassersController.cs" />
     <Compile Include="Controllers\HelloWorldController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\Manage_ChecksController.cs" />
+    <Compile Include="Controllers\LettersController.cs" />
+    <Compile Include="Controllers\Letter_TextsController.cs" />
     <Compile Include="Controllers\StoresController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201311060431153_InitialCreate.cs" />
-    <Compile Include="Migrations\201311060431153_InitialCreate.Designer.cs">
-      <DependentUpon>201311060431153_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201311140209036_InitialCreate.cs" />
+    <Compile Include="Migrations\201311140209036_InitialCreate.Designer.cs">
+      <DependentUpon>201311140209036_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201311140417323_mig2.cs" />
+    <Compile Include="Migrations\201311140417323_mig2.Designer.cs">
+      <DependentUpon>201311140417323_mig2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201311140426417_mig3.cs" />
+    <Compile Include="Migrations\201311140426417_mig3.Designer.cs">
+      <DependentUpon>201311140426417_mig3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201311140440497_mig31.cs" />
+    <Compile Include="Migrations\201311140440497_mig31.Designer.cs">
+      <DependentUpon>201311140440497_mig31.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Accounts.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Banks.cs" />
-    <Compile Include="Models\Check.cs" />
+    <Compile Include="Models\Checks.cs" />
     <Compile Include="Models\Check_Passer.cs" />
     <Compile Include="Models\Letters.cs" />
-    <Compile Include="Models\Letter_Text.cs" />
+    <Compile Include="Models\Letter_Texts.cs" />
     <Compile Include="Models\RCTS_Database.cs" />
-    <Compile Include="Models\Store.cs" />
+    <Compile Include="Models\Stores.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -305,22 +320,44 @@
     <Content Include="Views\HelloWorld\Index.cshtml" />
     <Content Include="Views\HelloWorld\Welcome.cshtml" />
     <Content Include="Views\HelloWorld\NotWelcome.cshtml" />
-    <Content Include="Views\Stores\Index.cshtml" />
-    <Content Include="Views\Stores\Details.cshtml" />
-    <Content Include="Views\Stores\Create.cshtml" />
-    <Content Include="Views\Stores\Edit.cshtml" />
-    <Content Include="Views\Stores\Delete.cshtml" />
+    <Content Include="Views\Admin_Duties\Contact.cshtml" />
+    <Content Include="Views\Admin_Duties\Index.cshtml" />
+    <Content Include="Views\Admin_Duties\PrintLetters.cshtml" />
     <Content Include="Views\Check_Passers\Index.cshtml" />
     <Content Include="Views\Check_Passers\Details.cshtml" />
     <Content Include="Views\Check_Passers\Create.cshtml" />
     <Content Include="Views\Check_Passers\Edit.cshtml" />
     <Content Include="Views\Check_Passers\Delete.cshtml" />
-    <Content Include="Views\Check_Entry\Contact.cshtml" />
-    <Content Include="Views\Check_Entry\Index.cshtml" />
-    <Content Include="Views\Manage_Checks\Index.cshtml" />
-    <Content Include="Views\Admin_Duties\Contact.cshtml" />
-    <Content Include="Views\Admin_Duties\Index.cshtml" />
-    <Content Include="Views\Admin_Duties\PrintLetters.cshtml" />
+    <Content Include="Views\Letters\Index.cshtml" />
+    <Content Include="Views\Letters\Details.cshtml" />
+    <Content Include="Views\Letters\Create.cshtml" />
+    <Content Include="Views\Letters\Edit.cshtml" />
+    <Content Include="Views\Letters\Delete.cshtml" />
+    <Content Include="Views\Letter_Texts\Index.cshtml" />
+    <Content Include="Views\Letter_Texts\Details.cshtml" />
+    <Content Include="Views\Letter_Texts\Create.cshtml" />
+    <Content Include="Views\Letter_Texts\Edit.cshtml" />
+    <Content Include="Views\Letter_Texts\Delete.cshtml" />
+    <Content Include="Views\Stores\Index.cshtml" />
+    <Content Include="Views\Stores\Details.cshtml" />
+    <Content Include="Views\Stores\Create.cshtml" />
+    <Content Include="Views\Stores\Edit.cshtml" />
+    <Content Include="Views\Stores\Delete.cshtml" />
+    <Content Include="Views\Checks\Index.cshtml" />
+    <Content Include="Views\Checks\Details.cshtml" />
+    <Content Include="Views\Checks\Create.cshtml" />
+    <Content Include="Views\Checks\Edit.cshtml" />
+    <Content Include="Views\Checks\Delete.cshtml" />
+    <Content Include="Views\Banks\Index.cshtml" />
+    <Content Include="Views\Banks\Details.cshtml" />
+    <Content Include="Views\Banks\Create.cshtml" />
+    <Content Include="Views\Banks\Edit.cshtml" />
+    <Content Include="Views\Banks\Delete.cshtml" />
+    <Content Include="Views\Accounts\Index.cshtml" />
+    <Content Include="Views\Accounts\Details.cshtml" />
+    <Content Include="Views\Accounts\Create.cshtml" />
+    <Content Include="Views\Accounts\Edit.cshtml" />
+    <Content Include="Views\Accounts\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -329,8 +366,17 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201311060431153_InitialCreate.resx">
-      <DependentUpon>201311060431153_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201311140209036_InitialCreate.resx">
+      <DependentUpon>201311140209036_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201311140417323_mig2.resx">
+      <DependentUpon>201311140417323_mig2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201311140426417_mig3.resx">
+      <DependentUpon>201311140426417_mig3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201311140440497_mig31.resx">
+      <DependentUpon>201311140440497_mig31.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

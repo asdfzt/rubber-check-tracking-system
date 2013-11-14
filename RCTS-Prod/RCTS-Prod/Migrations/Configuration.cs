@@ -5,14 +5,14 @@ namespace RCTS_Prod.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<RCTS_Prod.Models.Check_PasserDBContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<RCTS_Prod.Models.RCTS_DatabaseContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(RCTS_Prod.Models.Check_PasserDBContext context)
+        protected override void Seed(RCTS_Prod.Models.RCTS_DatabaseContext context)
         {
             //  This method will be called after migrating to the latest version.
 

@@ -1,0 +1,22 @@
+﻿@model RCTS_Prod.Models.Account
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Account</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Bank.Bank_Phone_No)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Bank.Bank_Phone_No)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Account_No }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

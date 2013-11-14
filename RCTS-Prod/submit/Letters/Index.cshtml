@@ -1,0 +1,75 @@
+﻿@model IEnumerable<RCTS_Prod.Models.Letter>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Letter_Text_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Check_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Letter_One_Sent)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Letter_One_Received)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Letter_Two_Sent)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Letter_Two_Received)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Letter_Three_Sent)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Letter_Three_Received)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Letter_Text_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Check_ID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Letter_One_Sent)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Letter_One_Received)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Letter_Two_Sent)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Letter_Two_Received)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Letter_Three_Sent)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Letter_Three_Received)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Letter_ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Letter_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Letter_ID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -37,18 +37,5 @@ namespace RCTS_Prod.Tests.Controllers
             // Assert
             Assert.AreEqual("This is the About page", result.ViewBag.Message);
         }
-
-        [TestMethod]
-        public void Contact()
-        {
-            // Arrange
-            HomeController controller = new HomeController();
-
-            // Act
-            ViewResult result = controller.Contact() as ViewResult;
-
-            // Assert
-            Assert.AreEqual("This is the Contact page", result.ViewBag.Message);
-        }
     }
 }
