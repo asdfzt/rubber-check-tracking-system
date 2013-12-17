@@ -1,0 +1,104 @@
+﻿@model IEnumerable<RCTS_Prod.Models.Check>
+@{
+    ViewBag.Title = "Print Letters";
+}
+
+<h2>Letters to be printed:</h2>
+
+
+
+
+
+<table border="1" cellpadding="10">
+    <tr>
+        @*<th>
+            Print Me&nbsp&nbsp
+        </th>*@
+        <th>
+            Check Passer
+        </th>
+        <th>
+           Check Number&nbsp&nbsp
+        </th>
+        <th>
+            Account Number&nbsp&nbsp
+        </th>
+        <th>
+           Letter to be sent&nbsp&nbsp
+        </th>
+        <th>
+            <u><a href="~/Checks/PrintAll">Print All Letters</a></u>
+        </th>
+        <th>
+            &nbsp&nbsp Sent
+        </th>
+        
+        
+
+
+
+
+    </tr>
+
+@foreach (var item in Model)
+{
+    <tr>
+        @*<td>
+            @Html.ActionLink("Print", "Print")
+        </td>*@
+        <td>
+        @Html.DisplayFor(modelItem => item.Check_Passer.First_Name)
+        @Html.DisplayFor(modelItem => item.Check_Passer.Last_Name)
+        </td>
+        <td>
+        @Html.DisplayFor(modelItem => item.Check_No)
+        </td>
+        <td>
+        @Html.DisplayFor(modelItem => item.Account_No)
+        </td>
+        <td>
+        Letter @Html.DisplayFor(modelItem => item.Letter_Text_ID)
+        </td>
+
+        @{
+         
+          if (item.Letter_Text_ID == 1)
+          {
+             <td>
+                @Html.ActionLink("Print", "Letter1", new { id=item.CheckID })
+             </td>
+             <td>
+                @Html.ActionLink("Letter Sent?", "Let1SentUpdate",  new { id=item.CheckID})
+            </td>
+            
+
+         }
+              else if (item.Letter_Text_ID == 2)
+              {
+                <td>
+                    @Html.ActionLink("Print", "Letter2", new { id=item.CheckID })
+                </td>
+                <td>
+                    @Html.ActionLink("Letter Sent?", "Let2SentUpdate",  new { id=item.CheckID})
+                </td>
+               
+              }
+              else if (item.Letter_Text_ID == 3)
+              {
+                <td>
+                    @Html.ActionLink("Print", "Letter3", new { id=item.CheckID })
+                </td>
+                <td>
+                    @Html.ActionLink("Letter Sent?", "Let3SentUpdate",  new { id=item.CheckID})
+                </td>
+                
+              }
+       }
+        
+        
+        
+    </tr>
+}
+
+
+</table>

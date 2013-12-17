@@ -1,0 +1,90 @@
+﻿@model IEnumerable<RCTS_Prod.Models.Check>
+
+@{
+    ViewBag.Title = "Open";
+}
+
+<h2>Open Check Entries</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table border="1" cellpadding="10">
+    <tr>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Check_PasserID)*@
+            Name&nbsp&nbsp
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Check_No)*@
+            Check No&nbsp&nbsp
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Date_Check_Received)*@
+            Date Check Received&nbsp&nbsp
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Amount)*@
+            Amount&nbsp&nbsp
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Date_Payment_Received)*@
+            Letter Sent&nbsp&nbsp
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Fee_Received)*@
+            Amount Received
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.Check_Passer.First_Name)
+            @Html.DisplayFor(modelItem => item.Check_Passer.Last_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Check_No)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date_Check_Received)
+        </td>
+        <td>
+            $@Html.DisplayFor(modelItem => item.Amount)
+        </td>
+        <td>
+            @{
+                if (item.Letter_Text_ID == 1)
+                {
+                    @Html.ActionLink("Letter 1", "Let1RecUpdate", new { id=item.CheckID })
+                }
+                else if (item.Letter_Text_ID == 2)
+                { 
+                    @Html.ActionLink("Letter 2", "Let2RecUpdate", new { id=item.CheckID })
+                }
+                else if (item.Letter_Text_ID == 3)
+                { 
+                    @Html.ActionLink("Letter 3", "Let3RecUpdate", new { id=item.CheckID })
+                }
+            }
+            
+        </td>
+        <td>
+            @{
+                if (item.Fee_Received == 0) {
+                    <a href="~/Checks/EnterFee">Enter Fee</a>
+                } else {
+                    @Html.DisplayFor(modelItem => item.Fee_Received)
+                }
+            }
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CheckID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CheckID })
+        </td>
+    </tr>
+}
+
+</table>

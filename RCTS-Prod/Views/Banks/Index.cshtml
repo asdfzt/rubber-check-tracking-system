@@ -1,0 +1,69 @@
+﻿@model IEnumerable<RCTS_Prod.Models.Bank>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create") &nbsp&nbsp
+    @Html.ActionLink("Back to Accounts", "Create", "Accounts")
+</p>
+<table>
+    <tr>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Routing_No)*@
+            <b>Routing Number</b>&nbsp&nbsp
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Bank_Phone_No)*@
+            <b>Phone Number</b>&nbsp&nbsp
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Bank_Street)*@
+            <b>Street</b>
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Bank_City)*@
+            <b>City</b>
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Bank_State)*@
+            <b>State</b>
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Bank_Zip)*@
+            <b>Zip Code</b>
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Routing_No)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Bank_Phone_No)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Bank_Street)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Bank_City)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Bank_State)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Bank_Zip)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Routing_No }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Routing_No })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,34 @@
+﻿@model RCTS_Prod.Models.Check
+@{
+    ViewBag.Title = "Update Date";
+}
+
+<h2>Enter Fee</h2>
+<br />
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+ 
+        
+
+
+        <div class="editor-label">
+            <b>Enter the fee received from the bad check passer.</b>
+            
+        </div>
+        <div class="editor-field">
+           @{
+               string x = ViewBag.Message; 
+               if(x != null)  
+                  {@ViewBag.Message }
+            }
+            <br />
+            @Html.Editor("date")
+                  
+               
+        </div>
+        <p>
+            <input type="submit" value="Save"  />
+        </p>
+   
+}

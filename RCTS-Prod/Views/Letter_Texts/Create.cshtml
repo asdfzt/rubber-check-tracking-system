@@ -1,0 +1,35 @@
+﻿@model RCTS_Prod.Models.Letter_Text
+
+@{
+    ViewBag.Title = "Create Letter Texts";
+}
+
+<h2>Create Letter Texts</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Letter_Text</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Letter_Path)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Letter_Path)
+            @Html.ValidationMessageFor(model => model.Letter_Path)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

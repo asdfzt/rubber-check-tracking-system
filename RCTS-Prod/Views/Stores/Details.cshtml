@@ -1,0 +1,29 @@
+﻿@model RCTS_Prod.Models.Store
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Store</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Store_City)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Store_City)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Store_State)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Store_State)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.StoreID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

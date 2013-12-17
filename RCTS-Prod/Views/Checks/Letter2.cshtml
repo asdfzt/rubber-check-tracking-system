@@ -1,0 +1,35 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Letter2</title>
+</head>
+<body>
+    <div>
+        RCTS<br />
+1700 Wade Hampton Blvd.<br />
+Greenville, SC  29614<br />
+<br />
+<br />
+
+
+
+@ViewBag.ch.Check_Passer.First_Name &nbsp @ViewBag.ch.Check_Passer.Last_Name<br />
+@ViewBag.ch.Check_Passer.Street<br />
+@ViewBag.ch.Check_Passer.City, @ViewBag.ch.Check_Passer.State  @ViewBag.ch.Check_Passer.Zip<br /><br />
+
+        This is your second reminder that you owe RCTS the total of $@ViewBag.ch.Amount. A late fee of $20 has been incurred, please pay your remaining balance plus the fee within two weeks of receiving this letter. 
+<br /><br />
+If you have any questions or concerns, please contact us.
+
+<br /><br />
+Bob Simmons<br />
+RCTS Manager
+    </div>
+</body>
+</html>

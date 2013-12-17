@@ -1,0 +1,163 @@
+﻿@model RCTS_Prod.Models.Check
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+<br />
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Check</legend>
+
+        @Html.HiddenFor(model => model.CheckID)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Account_No, "Account")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("Account_No", String.Empty)
+            @Html.ValidationMessageFor(model => model.Account_No)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.StoreID, "Store")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("StoreID", String.Empty)
+            @Html.ValidationMessageFor(model => model.StoreID)
+        </div>
+        <br />
+        <div class="editor-label">
+            @*@Html.LabelFor(model => model.Check_PasserID)*@
+            <b>Drivers License</b>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Check_PasserID)
+            @Html.ValidationMessageFor(model => model.Check_PasserID)
+        </div>
+
+        <div class="editor-label">
+            @*@Html.LabelFor(model => model.Check_No)*@
+            <b>Check Number</b>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Check_No)
+            @Html.ValidationMessageFor(model => model.Check_No)
+        </div>
+
+        <div class="editor-label">
+            @*@Html.LabelFor(model => model.Date_Check_Received)*@
+            <b>Date Check Received</b>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Date_Check_Received)
+            @Html.ValidationMessageFor(model => model.Date_Check_Received)
+        </div>
+
+        <div class="editor-label">
+            @*@Html.LabelFor(model => model.Amount)*@
+            <b>Amount</b>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Amount)
+            @Html.ValidationMessageFor(model => model.Amount)
+        </div>
+
+        <div class="editor-label">
+            @*@Html.LabelFor(model => model.Date_Payment_Received)*@
+            <b>Date Payment Received</b>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Date_Payment_Received)
+            @Html.ValidationMessageFor(model => model.Date_Payment_Received)
+            
+        </div>
+
+        <div class="editor-label">
+            @*@Html.LabelFor(model => model.Fee_Received)*@
+            <b>Fee Received</b>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Fee_Received)
+            @Html.ValidationMessageFor(model => model.Fee_Received)
+        </div>
+
+        <div class="editor-label">
+            @*@Html.LabelFor(model => model.Fee_Received)*@
+            <b>Letter Text ID</b>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Letter_Text_ID)
+            @Html.ValidationMessageFor(model => model.Letter_Text_ID)
+        </div>
+
+        <div class="editor-label">
+            @*@Html.LabelFor(model => model.Fee_Received)*@
+            <b>Letter One Sent Date</b>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Letter_One_Sent)
+            @Html.ValidationMessageFor(model => model.Letter_One_Sent)
+        </div>
+
+        <div class="editor-label">
+            @*@Html.LabelFor(model => model.Fee_Received)*@
+            <b>Letter One Received Date</b>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Letter_One_Received)
+            @Html.ValidationMessageFor(model => model.Letter_One_Received)
+        </div>
+
+        <div class="editor-label">
+            @*@Html.LabelFor(model => model.Fee_Received)*@
+            <b>Letter Two Sent Date</b>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Letter_Two_Sent)
+            @Html.ValidationMessageFor(model => model.Letter_Two_Sent)
+        </div>
+
+        <div class="editor-label">
+            @*@Html.LabelFor(model => model.Fee_Received)*@
+            <b>Letter Two Received Date</b>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Letter_Two_Received)
+            @Html.ValidationMessageFor(model => model.Letter_Two_Received)
+        </div>
+
+        <div class="editor-label">
+            @*@Html.LabelFor(model => model.Fee_Received)*@
+            <b>Letter Three Sent Date</b>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Letter_Three_Sent)
+            @Html.ValidationMessageFor(model => model.Letter_Three_Sent)
+        </div>
+
+        <div class="editor-label">
+            @*@Html.LabelFor(model => model.Fee_Received)*@
+            <b>Letter Three Received Date</b>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Letter_Three_Received)
+            @Html.ValidationMessageFor(model => model.Letter_Three_Received)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

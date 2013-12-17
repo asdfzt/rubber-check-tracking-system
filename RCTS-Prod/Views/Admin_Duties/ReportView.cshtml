@@ -1,0 +1,78 @@
+﻿@model IEnumerable<RCTS_Prod.Models.Check>
+
+@{
+    ViewBag.Title = "All";
+}
+
+<h2>Report View</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table border="1" cellpadding="10">
+    <tr>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Check_PasserID)*@
+            @Html.ActionLink("Name", "All", new { sort=1 })
+        </th>
+        <th style="">
+            @*@Html.DisplayNameFor(model => model.Check_No)*@
+            @Html.ActionLink("Check No", "All", new { sort=2 })
+        </th>
+
+        <th>
+            @*@Html.DisplayNameFor(model => model.Date_Check_Received)*@
+            @Html.ActionLink("Date Check Received", "All", new { sort=3 })
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Amount)*@
+            @Html.ActionLink("Amount", "All", new { sort=4 })
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Date_Payment_Received)*@
+            @Html.ActionLink("Payment Received Date", "All", new { sort=5 })
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Fee_Received)*@
+            @Html.ActionLink("Amount Received", "All", new { sort=6 })
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.Check_Passer.First_Name)
+            @Html.DisplayFor(modelItem => item.Check_Passer.Last_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Check_No)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date_Check_Received)
+        </td>
+        <td>
+            $@Html.DisplayFor(modelItem => item.Amount)
+        </td>
+        <td>
+            @{if (item.Date_Payment_Received == item.Date_Check_Received)
+              {} else {
+              @Html.DisplayFor(modelItem => item.Date_Payment_Received) 
+              }
+            }
+            
+        </td>
+        <td>@{if (item.Fee_Received != 0)
+              { <b>$</b> }
+              }
+             @Html.DisplayFor(modelItem => item.Fee_Received)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.CheckID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.CheckID })
+        </td>
+    </tr>
+}
+
+</table>

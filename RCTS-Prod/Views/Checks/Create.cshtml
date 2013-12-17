@@ -1,0 +1,122 @@
+﻿@model RCTS_Prod.Models.Check
+
+@{
+    ViewBag.Title = "Create Check";
+}
+
+<h2>Create Check</h2>
+<br />
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Check</legend>
+
+        <div class="editor-label">
+            @*@Html.LabelFor(model => model.Account_No, "Account")*@
+            <b>Account Number</b>
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("Account_No", String.Empty)
+            @Html.ValidationMessageFor(model => model.Account_No)
+            @Html.ActionLink("Create Account", "Create", "Accounts")
+            @Html.ActionLink("View Accounts", "Index", "Accounts")
+            
+        </div>
+        <br />
+        <div class="editor-label">
+            @*@Html.LabelFor(model => model.StoreID, "Store")*@
+            <b>Store Location</b>
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("StoreID", String.Empty)
+            @Html.ValidationMessageFor(model => model.StoreID)
+            @Html.ActionLink("Create Store", "Create", "Stores")
+            @Html.ActionLink("View Stores", "Index", "Stores")
+            
+        </div>
+        <br />
+        <div class="editor-label">
+            @*@Html.LabelFor(model => model.Check_PasserID)*@
+            <b>Drivers License</b>
+        </div>
+        <div class="editor-field">
+            @*@Html.EditorFor(model => model.Check_PasserID)*@
+            @Html.DropDownList("Check_PasserID", String.Empty)
+            @Html.ValidationMessageFor(model => model.Check_PasserID)
+            @Html.ActionLink("Create Check Passer", "Create", "Check_Passers")
+            @Html.ActionLink("View Check Passers", "Index", "Check_Passers")
+            @*@Html.EditorFor(model => model.Check_PasserID)
+            @Html.ValidationMessageFor(model => model.Check_PasserID)*@
+            
+        </div>
+        <br />
+        <div class="editor-label">
+            @*@Html.LabelFor(model => model.Check_No)*@
+            <b>Check Number</b>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Check_No)
+            @Html.ValidationMessageFor(model => model.Check_No)
+            
+        </div>
+        <br />
+        <div class="editor-label">
+            @*@Html.LabelFor(model => model.Date_Check_Received)*@
+            <b>Check Received Date</b>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Date_Check_Received)
+            @Html.ValidationMessageFor(model => model.Date_Check_Received)
+            <br />
+            {Month}/{Day}/{Year}
+            
+        </div>
+        <br />
+        <div class="editor-label">
+            @*@Html.LabelFor(model => model.Amount)*@
+            <b>Amount on Check</b>
+        </div>
+
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Amount)
+            @Html.ValidationMessageFor(model => model.Amount)
+            
+        </div>
+        <br />
+        @*<div class="editor-label">
+            <b>Date Fee was Received</b>
+
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Date_Payment_Received)
+            @Html.ValidationMessageFor(model => model.Date_Payment_Received)
+          
+            <br />
+            {Month}/{Day}/{Year}
+            
+        </div>
+        <br />
+        <div class="editor-label">
+            <b>Fee Amount Received</b>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Fee_Received)
+            @Html.ValidationMessageFor(model => model.Fee_Received)
+            
+        </div>*@
+        <br />
+        <p>
+            <input type="submit" value="Create" />
+            @Html.ActionLink("View Checks", "Index", "Checks")
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

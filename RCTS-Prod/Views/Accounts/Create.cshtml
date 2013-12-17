@@ -1,0 +1,46 @@
+﻿@model RCTS_Prod.Models.Account
+
+@{
+    ViewBag.Title = "Create Account";
+}
+
+<h2>Create Account</h2>
+<br />
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Account</legend>
+
+        <div class="editor-label">
+            @*@Html.LabelFor(model => model.Routing_No, "Bank")*@
+            <b>Routing Number</b>
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("Routing_No", String.Empty)
+            @Html.ValidationMessageFor(model => model.Routing_No)
+            @Html.ActionLink("Create Bank", "Create", "Banks")
+            @Html.ActionLink("View Banks", "Index", "Banks")
+        </div>
+        <br />
+        <div class="editor-label">
+            @*@Html.LabelFor(model => model.Account_No)*@
+            <b>Account Number</b>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Account_No)
+            @Html.ValidationMessageFor(model => model.Account_No)
+        </div>
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to Checks", "Create", "Checks")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

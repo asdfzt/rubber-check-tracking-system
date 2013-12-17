@@ -1,0 +1,123 @@
+﻿@model IEnumerable<RCTS_Prod.Models.Check>
+@{
+    ViewBag.Title = "Reports";
+}
+
+<h2>Reports</h2>
+<br />
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+
+        <div class="editor-field">
+            <b>From Date</b>
+           @{
+               string x = ViewBag.Message; 
+               if(x != null)  
+                  {@ViewBag.Message }
+            }
+            <br />
+            @Html.Editor("fromDate")
+            <p>{Month}/{Day}/{Year}</p>
+                  
+               
+        </div>
+    
+        <div class="editor-field">
+            <b>To Date</b>
+           @{
+               string xs = ViewBag.Message; 
+               if(xs != null)  
+                  {@ViewBag.Message }
+            }
+            <br />
+            @Html.Editor("toDate")
+            <p>{Month}/{Day}/{Year}</p>
+                  
+               
+        </div>
+        <p>
+            <input type="submit" value="Save"  />
+        </p>
+ 
+    
+    if (Model != null) { 
+        <table border="1" cellpadding="10">
+    <tr>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Check_PasserID)*@
+            @*@Html.ActionLink("Name", "Reports", new { sort=1 })*@
+            <b>Name</b>
+        </th>
+        <th style="">
+            @*@Html.DisplayNameFor(model => model.Check_No)*@
+            @*@Html.ActionLink("Check No", "Reports", new { sort=2 })*@
+            <b>Check No</b>
+        </th>
+
+        <th>
+            @*@Html.DisplayNameFor(model => model.Date_Check_Received)*@
+            @*@Html.ActionLink("Date Check Received", "Reports", new { sort=3 })*@
+            <b>Date Check Received</b>
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Amount)*@
+            @*@Html.ActionLink("Amount", "Reports", new { sort=4 })*@
+            <b>Amount</b>
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Date_Payment_Received)*@
+            @*@Html.ActionLink("Payment Received Date", "Reports", new { sort=5 })*@
+            <b>Payment Received Date</b>
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Fee_Received)*@
+            @*@Html.ActionLink("Amount Received", "Reports", new { sort=6 })*@
+            <b>Amount Received</b>
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.Check_Passer.First_Name)
+            @Html.DisplayFor(modelItem => item.Check_Passer.Last_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Check_No)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Date_Check_Received)
+        </td>
+        <td>
+            $@Html.DisplayFor(modelItem => item.Amount)
+        </td>
+        <td>
+            @{if (item.Date_Payment_Received == item.Date_Check_Received)
+              {} else {
+              @Html.DisplayFor(modelItem => item.Date_Payment_Received) 
+              }
+            }
+            
+        </td>
+        <td>@{if (item.Fee_Received != 0)
+              { <b>$</b> }
+              }
+             @Html.DisplayFor(modelItem => item.Fee_Received)
+        </td>
+        
+    </tr>
+
+}
+</table>
+    
+    
+    }
+        
+        }
+    
+    
+      

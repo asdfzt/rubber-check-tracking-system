@@ -1,0 +1,52 @@
+﻿@model RCTS_Prod.Models.Store
+
+@{
+    ViewBag.Title = "Create Store";
+}
+
+<h2>Create Store</h2>
+<br />
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Store</legend>
+        <div class="editor-label">
+            @*@Html.LabelFor(model => model.StoreID)*@
+            <b>Store ID</b>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.StoreID)
+            @Html.ValidationMessageFor(model => model.StoreID)
+        </div>
+        <div class="editor-label">
+            @*@Html.LabelFor(model => model.Store_City)*@
+            <b>Store City</b>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Store_City)
+            @Html.ValidationMessageFor(model => model.Store_City)
+        </div>
+
+        <div class="editor-label">
+            @*@Html.LabelFor(model => model.Store_State)*@
+            <b>Store State</b>
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Store_State)
+            @Html.ValidationMessageFor(model => model.Store_State)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to Checks", "Create", "Checks")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

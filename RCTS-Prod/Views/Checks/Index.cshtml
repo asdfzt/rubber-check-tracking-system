@@ -1,0 +1,29 @@
+﻿@model IEnumerable<RCTS_Prod.Models.Check>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Data Management</h2>
+
+<ol class="round">
+        <li class="one"><a href="~/Checks/All">All Check Entries</a>
+            <p>View all checks issues in the RCTS.</p>
+        </li>
+
+        <li class="two"><a href="~/Checks/Open">Open Check Entries</a>
+            <p>View all checks issues that have not been resolved.</p>
+        </li>
+        
+        <li class="three"><a href="~/Checks/Close">Closed Check Entries</a>
+             <p>View all checks issues that have been resolved.</p>
+        </li>
+        <li class="four"><a href="~/Check_Passers/Index">All Check Passers</a>
+             <p>View all checks passers in the RCTS system.</p>
+        </li>
+        <li class="five"><a href="~/Checks/PrintLetters">Print Letters</a>
+            <p>Allows user to print back check notice letters.</p>
+        </li>
+   
+</ol>
+    

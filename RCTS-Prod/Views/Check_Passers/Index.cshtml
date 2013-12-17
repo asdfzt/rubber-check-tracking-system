@@ -1,0 +1,83 @@
+﻿@model IEnumerable<RCTS_Prod.Models.Check_Passer>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create") &nbsp&nbsp
+    @Html.ActionLink("Back to Checks", "Create", "Checks")
+</p>
+<table border="1" cellpadding="10">
+    <tr>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Check_PasserID)*@
+            <b>Drivers License</b>&nbsp&nbsp
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Last_Name)*@
+            <b>Last Name</b>
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.First_Name)*@
+            <b>First Name</b>
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Street)*@
+            <b>Street</b>
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.City)*@
+            <b>City</b>
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.State)*@
+            <b>State</b>
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Zip)*@
+            <b>Zip Code</b>
+        </th>
+        <th>
+            @*@Html.DisplayNameFor(model => model.Phone_No)*@
+            <b>Phone Number</b>
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Check_PasserID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Last_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.First_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Street)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.City)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.State)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Zip)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phone_No)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Check_PasserID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Check_PasserID })
+        </td>
+    </tr>
+}
+
+</table>

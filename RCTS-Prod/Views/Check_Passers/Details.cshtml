@@ -1,0 +1,64 @@
+﻿@model RCTS_Prod.Models.Check_Passer
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Check_Passer</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Last_Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Last_Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.First_Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.First_Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Street)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Street)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.City)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.City)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.State)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.State)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Zip)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Zip)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Phone_No)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Phone_No)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Check_PasserID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
